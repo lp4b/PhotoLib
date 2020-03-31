@@ -1,0 +1,14 @@
+:host{
+  cursor: pointer;
+
+}
+:host:focus {
+  outline: none;
+}
+:host .card{
+  transition: all 300ms ease-out;
+}
+:host:hover .card{
+  transform: translateY(-5px);
+  box-shadow: 0 4px 17px #00000038;
+}

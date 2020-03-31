@@ -1,0 +1,9 @@
+<app-card
+  class="col mb-4"
+  *ngFor="let photo of photos | async"
+  [routerLink]="['/gallery', photo.id]"
+  [imgUrl]="photo.urls.thumb"
+  [title]="photo.alt_description"
+  [date]="photo.created_at"
+></app-card>
+

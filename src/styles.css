@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
+svg#clouds {
+  position: fixed;
+  bottom: -160px;
+  left: -230px;
+  z-index: -10;
+  width: 1920px;
+}
+
+.card-img-top {
+  height: 15rem;
+  object-fit: cover;
+}

@@ -1,0 +1,13 @@
+<button
+  (click)="close()"
+  type="button"
+  class="close mb-4"
+  aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+<ng-container *ngIf="(photo$ | async) as photo">
+  <app-banner class=" mb-4 d-block" [imgUrl]="photo.urls.regular"></app-banner>
+  <h3>{{photo.alt_description}}</h3>
+  <h5>Author: {{photo.user.name}}</h5>
+</ng-container>
+
