@@ -4,7 +4,8 @@ export interface IPhoto {
   alt_description: string;
   urls: {
     regular: string,
-    thumb: string
+    thumb: string,
+    small: string
   };
   user: { id: string, name: string };
 }

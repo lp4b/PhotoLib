@@ -14,8 +14,8 @@ import {pluck, startWith, takeUntil, tap} from 'rxjs/operators';
 })
 export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChildren(CardComponent, {read: ElementRef}) items: QueryList<ElementRef>;
-  @ViewChild('stage', {read: ElementRef}) private stage: ElementRef;
-  @ViewChild('stageOuter', {read: ElementRef}) private stageOuter: ElementRef;
+  @ViewChild('stage') private stage: ElementRef;
+  @ViewChild('stageOuter') private stageOuter: ElementRef;
 
   private player: AnimationPlayer;
   private itemWidth: number;
@@ -25,7 +25,6 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private photoService: PhotoService,
-    private elementRef: ElementRef,
     private builder: AnimationBuilder,
     private renderer: Renderer2) {
   }
@@ -35,11 +34,9 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.itemWidth = this.stageOuter.nativeElement.offsetWidth / 2;
-
     setTimeout(() => {
       const firstItem = this.items.first.nativeElement;
-
+      this.itemWidth = this.stageOuter.nativeElement.offsetWidth / 2;
       fromEvent(this.stage.nativeElement, 'click')
         .pipe(
           pluck('target'),
@@ -48,7 +45,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
           takeUntil(this.destroy)
         )
         .subscribe();
-    }, 300);
+    }, 500);
   }
 
   switchPicture(target: HTMLElement) {
