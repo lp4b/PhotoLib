@@ -124,5 +124,10 @@
   "defaultProject": "PhotoLib",
   "cli": {
     "analytics": "48e2dcc4-419d-4a6e-8883-5e6c029eb412"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
 }

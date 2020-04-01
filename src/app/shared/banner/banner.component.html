@@ -1,2 +1,6 @@
-<img [src]="imgUrl" class="img-fluid w-100 rounded" alt="Responsive image">
-
+<div class="img rounded hero" [style.background-image]="'url('+imgUrl+')'" [style.max-height]="maxHeight">
+  <div *ngIf="title || author" class="desc p-3 ">
+    <h3>{{title}}</h3>
+    <h5>Author: {{author}}</h5>
+  </div>
+</div>
