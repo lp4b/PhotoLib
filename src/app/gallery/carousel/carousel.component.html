@@ -1,0 +1,12 @@
+<div class="stage-outer" #stageOuter>
+  <div class="stage" #stage (click)="switchPicture($event.target)">
+    <app-card
+      [style.width]="itemWidth+'px'"
+      class="m-4"
+      *ngFor="let photo of photos | async"
+      [imgUrl]="photo.urls.thumb"
+      [title]="photo.alt_description"
+      [date]="photo.created_at"
+    ></app-card>
+  </div>
+</div>

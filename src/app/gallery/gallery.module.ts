@@ -6,10 +6,11 @@ import {CommonModule} from '@angular/common';
 import {CardDetailsComponent} from './card-details/card-details.component';
 import {RouterModule} from '@angular/router';
 import {SharedModule} from '../shared/shared.module';
+import { CarouselComponent } from './carousel/carousel.component';
 
 
 @NgModule({
-  declarations: [GalleryComponent, CardComponent, CardListComponent, CardDetailsComponent],
+  declarations: [GalleryComponent, CardComponent, CardListComponent, CardDetailsComponent, CarouselComponent],
   exports: [
     GalleryComponent, CardComponent, CardListComponent
   ],

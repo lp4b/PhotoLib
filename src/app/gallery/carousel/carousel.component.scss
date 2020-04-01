@@ -1,0 +1,23 @@
+:host {
+
+  .stage-outer {
+    overflow: hidden;
+
+    .stage {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      width: fit-content;
+    }
+  }
+
+  app-card {
+    display: inline-block;
+    opacity: 0.5;
+    transition: all 500ms;
+    &.active{
+      opacity: 1;
+    }
+  }
+
+}
